@@ -10,14 +10,19 @@ namespace MyLibrary
 	
 	{
 		// Propiedades
-		public int Id { get; }
-		public string Name { get; }
-		public decimal UnitPrice { get; }
-		public int UnitInStock { get; }
+		public int Id => id;
+		public string Name => name;
+		public decimal UnitPrice => unitPrice;
+		public int UnitInStock => unitsInStock;
 
-		//Constructor
 
-		
+		public class Product2(int id, string name,
+			bool discontinued)
+				: Product(id, name, default, default)
+		{
+			public bool Discontinued { get; set; } = discontinued;
+		}
+
 	}
 	
 	
